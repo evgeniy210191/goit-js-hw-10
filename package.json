@@ -2,14 +2,11 @@
   "name": "goit-js-hw-10",
   "version": "2.0.0",
   "description": "",
+  "source": "src/index.html",
   "homepage": "https://evgeniy210191.github.io/goit-js-hw-10",
   "scripts": {
     "start": "parcel",
     "build": "parcel build --public-url /goit-js-hw-10/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/evgeniy210191/goit-js-hw-10.git"
   },
   "keywords": [],
   "author": "Evgeniy Sulim <bees127@ukr.net>",
