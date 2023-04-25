@@ -5,7 +5,7 @@ import {
   info,
   input,
 } from './jsApi/fetchCountries.js';
-import { showListCountry, showInfoCountry } from './jsApi/pattern.js';
+import { showListCountris, showInfoCountry } from './jsApi/pattern.js';
 import Notiflix from 'notiflix';
 var debounce = require('lodash.debounce');
 function getCountry(event) {
@@ -45,7 +45,7 @@ function iterationCountry(countris) {
 
   if (countris.length > 1 && countris.length <= 10) {
     return countris.map(item => {
-      return showListCountry(item.flags.svg, item.name.official);
+      return showListCountris(item.flags.svg, item.name.official);
     })
   }
 }
