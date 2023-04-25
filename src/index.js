@@ -31,25 +31,32 @@ function iterationAllCountris(countrisAll) {
     );
   });
 }
+
 function iterationCountry(countris) {
   console.log(countris);
   if (countris.length === 0) {
-    return Notiflix.Notify.failure('Oops, there is no country with that name');
+    Notiflix.Notify.failure('Oops, there is no country with that name');
+    return ''
   }
 
   if (countris.length > 10) {
-    return Notiflix.Notify.info(
+    Notiflix.Notify.info(
       'Too many matches found. Please enter a more specific name.'
     );
+    return '';
   }
 
   if (countris.length > 1 && countris.length <= 10) {
     return countris.map(item => {
       return showListCountris(item.flags.svg, item.name.official);
-    });
+    }).join('');
   }
+  if (countris.length === 1) {
+    return showInfoCountry(...countris);
+  } ;
 }
 
 function renderCountis(country) {
   console.log(country);
+  list.innerHTML = country;
 }
