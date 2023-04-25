@@ -6,31 +6,38 @@ import {
   input,
 } from './jsApi/fetchCountries.js';
 import { showListCountry } from './jsApi/pattern.js';
+import Notiflix from 'notiflix';
 
 function getCountry(event) {
   fetchCountries(refs.URLCountryBek)
-    .then(renderCountry)
-    .then(x)
-    .catch(() => console.log('no country'));
+    .then(iterationAllCountris)
+    .then(iterationCountry)
+    .then(renderCountis)
+    .catch(() => Notiflix.Notify.failure('Qui timide rogat docet negare'));
 }
 input.addEventListener('input', getCountry);
 
-function renderCountry(countrisAll) {
-  return countrisAll
-    .map(item => {
-      if (input.value === '') {
-        return '';
-      }
-      if (
-        item.name.official
-          .toLowerCase()
-          .indexOf(input.value.toLowerCase().trim()) > -1
-      ) { 
-        return showListCountry(item.flags.svg, item.name);
-      }
-    })
-    .join('');
+function iterationAllCountris(countrisAll) {
+  if (input.value === '') {
+    return '';
+  }
+
+  return countrisAll.filter(item => {
+    return (
+      item.name.official
+        .toLowerCase()
+        .indexOf(input.value.toLowerCase().trim()) > -1
+    );
+  });
 }
-function x(res) {
-  list.innerHTML = res
+function iterationCountry(countris) {
+  for (const country of countris) {
+    if (countris.length > 1) {
+      return showListCountry(country.flags.svg, country.name.official);
+    }
+  }
+}
+
+function renderCountis(country) {
+  console.log(country);
 }
