@@ -46,11 +46,10 @@ function iterationCountry(countris) {
   if (countris.length > 1 && countris.length <= 10) {
     return countris.map(item => {
       return showListCountris(item.flags.svg, item.name.official);
-    })
+    });
   }
 }
 
 function renderCountis(country) {
   console.log(country);
-  
 }
