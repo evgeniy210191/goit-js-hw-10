@@ -5,17 +5,18 @@ import {
   info,
   input,
 } from './jsApi/fetchCountries.js';
-import { showListCountry } from './jsApi/pattern.js';
+import { showListCountry, showInfoCountry } from './jsApi/pattern.js';
 import Notiflix from 'notiflix';
-
+var debounce = require('lodash.debounce');
 function getCountry(event) {
   fetchCountries(refs.URLCountryBek)
     .then(iterationAllCountris)
     .then(iterationCountry)
     .then(renderCountis)
-    .catch(() => Notiflix.Notify.failure('Qui timide rogat docet negare'));
+    .catch(() => Notiflix.Notify.failure('sory'));
 }
-input.addEventListener('input', getCountry);
+
+input.addEventListener('input', debounce(getCountry, 300));
 
 function iterationAllCountris(countrisAll) {
   if (input.value === '') {
@@ -31,13 +32,26 @@ function iterationAllCountris(countrisAll) {
   });
 }
 function iterationCountry(countris) {
-  for (const country of countris) {
-    if (countris.length > 1) {
-      return showListCountry(country.flags.svg, country.name.official);
-    }
+  console.log(countris);
+  if (countris.length === 0) {
+    return Notiflix.Notify.failure('Oops, there is no country with that name');
+  }
+
+  if (countris.length > 10) {
+    return Notiflix.Notify.info(
+      'Too many matches found. Please enter a more specific name.'
+    );
+  }
+
+  if (countris.length > 1 && countris.length <= 10) {
+    return countris.map(item => {
+      return item.flags.svg;
+      // return showListCountry(item.flags.svg, item.name.official);
+    })
   }
 }
 
 function renderCountis(country) {
   console.log(country);
+  
 }

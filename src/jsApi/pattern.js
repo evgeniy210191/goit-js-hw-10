@@ -10,8 +10,8 @@ export function showListCountris(flag, country) {
 export function showInfoCountry(country) {
   const { capital, population, languages } = country;
   return `
-    <p class="title-info">capital<span class="about-country">${capital}</span></p>
-    <p class="title-info">population<span class="about-country">${population}</span></p>
-    <p class="title-info">languages<span class="about-country">${languages}</span></p>
+    <p class="title-info">${capital}<span class="about-country">${capital}</span></p>
+    <p class="title-info">${population}<span class="about-country">${population}</span></p>
+    <p class="title-info">${languages}<span class="about-country">${languages}</span></p>
   `;
 };
