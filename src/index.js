@@ -45,8 +45,7 @@ function iterationCountry(countris) {
 
   if (countris.length > 1 && countris.length <= 10) {
     return countris.map(item => {
-      return item.flags.svg;
-      // return showListCountry(item.flags.svg, item.name.official);
+      return showListCountry(item.flags.svg, item.name.official);
     })
   }
 }
