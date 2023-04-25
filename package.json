@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "source": "src/index.html",
-  "homepage": "https://evgeniy210191.github.io/goit-js-hw-10",
+  "homepage": "https://evgeniy210191.github.io/goit-js-hw-10/",
   "scripts": {
     "start": "parcel",
     "build": "parcel build --public-url /goit-js-hw-10/"
