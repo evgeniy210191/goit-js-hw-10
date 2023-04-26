@@ -25,7 +25,6 @@ function iterationCountry(countris) {
     reset();
     return;
   }
-  console.log(countris);
   if (countris.length === 0) {
     Notiflix.Notify.failure('Oops, there is no country with that name');
     reset();
@@ -57,8 +56,6 @@ function iterationCountry(countris) {
 }
 
 function render(country) {
-  console.log('render', country);
-
   const renderCountis = country
     .map(item => {
       return showListCountris(item.flags.svg, item.name.official);
