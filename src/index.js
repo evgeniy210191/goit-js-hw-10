@@ -56,9 +56,11 @@ function iterationCountry(countris) {
 }
 
 function render(country) {
+  console.log(country);
+  
   const renderCountis = country
     .map(item => {
-      return showListCountris(item.flags.svg, item.name.official);
+      return showListCountris(item.flags.svg, item.flags.alt, item.name.official);
     })
     .join('');
   list.insertAdjacentHTML('beforeend', renderCountis);

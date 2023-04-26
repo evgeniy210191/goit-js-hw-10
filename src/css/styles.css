@@ -23,6 +23,10 @@ body {
   list-style: none;
 }
 
+.country-list img {
+  vertical-align: middle;
+}
+
 .title-info {
   text-transform: capitalize;
   font-size: 18px;

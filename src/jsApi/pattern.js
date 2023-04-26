@@ -1,9 +1,8 @@
-export function showListCountris(flag, country) {
+export function showListCountris(flag, alt, country) {
   return `
   <li>
-    <svg width="30" height="20">
-      <use xlink:href="${flag}"></use>
-    </svg>${country}
+    <img src="${flag}" alt="${alt}" width="30" height="20">
+    ${country}
   </li>`;
 }
 
