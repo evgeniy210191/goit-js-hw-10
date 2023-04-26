@@ -18,7 +18,7 @@ function getCountry(event) {
     .catch(() => Notiflix.Notify.failure('sory'));
 }
 
-input.addEventListener('input', debounce(getCountry, 1000));
+input.addEventListener('input', debounce(getCountry, 5000));
 
 function iterationCountry(countris) {
   if (!countris) {
