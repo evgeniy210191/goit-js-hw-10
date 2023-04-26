@@ -1,31 +1,28 @@
 export function showListCountris(flag, country) {
   return `
   <li>
-    <svg width="20" height="15">
+    <svg width="30" height="20">
       <use xlink:href="${flag}"></use>
     </svg>${country}
   </li>`;
 }
 
 export function showInfoCountry(country) {
-  const { capital, population, languages, flag, name } = country;
+  const { capital, population, languages } = country;
+  const lang = Object.values(languages);
+
   return `
-  <p class="title-country">
-    <svg width="20" height="15">
-      <use xlink:href="${flag}"></use>
-    </svg>${name.official}
-  </p>
   <p class="title-info">
-    <span class="about-country">${capital}:</span>
+    <span class="about-country">Capital:</span>
     ${capital}
   </p>
   <p class="title-info">
-    <span class="about-country">${population}:</span>
+    <span class="about-country">Population:</span>
     ${population}
   </p>
   <p class="title-info">
-    <span class="about-country">${languages}:</span>
-    ${languages}
+    <span class="about-country">Languages:</span>
+    ${lang}
   </p>
   `;
 }

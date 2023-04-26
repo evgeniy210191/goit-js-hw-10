@@ -14,3 +14,22 @@ export const [list, info, input] = [
   '.country-info',
   '#search-box',
 ].map(item => document.querySelector(item));
+
+export function reset() {
+  info.innerHTML = '';
+  list.innerHTML = '';
+}
+
+export function iterationAllCountris(countrisAll) {
+  if (input.value.trim() === '') {
+    return;
+  }
+
+  return countrisAll.filter(item => {
+    return (
+      item.name.official
+        .toLowerCase()
+        .indexOf(input.value.toLowerCase().trim()) > -1
+    );
+  });
+}
