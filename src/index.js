@@ -1,12 +1,12 @@
+import { fetchCountries } from './jsApi/fetchCountries.js';
 import {
-  fetchCountries,
   refs,
   list,
   info,
   input,
   reset,
   iterationAllCountris,
-} from './jsApi/fetchCountries.js';
+} from './jsApi/data.js';
 import { showListCountris, showInfoCountry } from './jsApi/pattern.js';
 import Notiflix from 'notiflix';
 var debounce = require('lodash.debounce');
