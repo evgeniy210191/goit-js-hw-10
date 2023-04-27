@@ -14,16 +14,3 @@ export function reset() {
   list.innerHTML = '';
 }
 
-export function iterationAllCountris(countrisAll) {
-  if (input.value.trim() === '') {
-    return;
-  }
-
-  return countrisAll.filter(item => {
-    return (
-      item.name.official
-        .toLowerCase()
-        .indexOf(input.value.toLowerCase().trim()) > -1
-    );
-  });
-}
